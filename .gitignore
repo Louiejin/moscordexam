@@ -1,8 +1,8 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/Senior_Full_Stack_Software_Engineer_Coding Challenge/frontend/node_modules
-/Senior_Full_Stack_Software_Engineer_Coding Challenge/server/node_modules
+/Senior_Full_Stack_Software_Engineer_Coding_Challenge/frontend/node_modules
+/Senior_Full_Stack_Software_Engineer_Coding_Challenge/server/node_modules
 /.pnp
 .pnp.js
 

@@ -5,7 +5,7 @@ import { excerptCleaner, dateFormat } from "../utility";
 
 export default function Content(props){
     const [page, setPage] = useState(0);
-    const [item, setItem] = useState(6)
+    const [item, setItem] = useState(10)
 
     const onChangePageHandler = (event, newPage) => {
         setPage(newPage);

@@ -1,10 +1,9 @@
 const app = require('express')();
 const basicAuth = require('express-basic-auth');
-app.use(basicAuth({
-    users: { news: 'newsecrect' },
-    challenge: true // <--- needed to actually show the login dialog!
-}));
+var cors = require('cors');
+
 const port = process.env.PORT || 3001;
+app.use(cors());
 app.use((req,res,next)=>{
     const allowOrigin = ['http://localhost:5000', 'http://localhost:3000'];
 
@@ -16,6 +15,10 @@ app.use((req,res,next)=>{
     res.setHeader('Access-Control-Allow-Headers', 'Origin,Content-Type,Authorization,Accept');
     next();
 });
+app.use(basicAuth({
+    users: { 'news': 'newsecrect' },
+    challenge: true // <--- needed to actually show the login dialog!
+}));
 
 const newsRoutes = require('./routes/appRoutes');
 app.use('/', newsRoutes);

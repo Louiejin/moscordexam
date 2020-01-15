@@ -22,7 +22,13 @@ export default class TopNews extends React.Component{
     }
 
     getData=(id)=>{
-        axios.get('/topnews/'+id,axiosConfig,basicAuth).then(res=>{
+        let {headers,auth} = axiosConfig
+        axios({
+            url:'/topnews/'+id,
+            method: 'get',
+            headers,
+            auth
+        }).then(res=>{
             this.setState({
                 resArticles:res.data,
                 updating:false

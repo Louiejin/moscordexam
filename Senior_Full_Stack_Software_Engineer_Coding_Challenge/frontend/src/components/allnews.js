@@ -18,9 +18,16 @@ export default class AllNews extends React.Component{
     }
 
     getData=(id)=>{
-        axios.get('/allnews/'+id,axiosConfig,basicAuth).then(res=>{
+        let {headers,auth} = axiosConfig
+        axios({
+            url:'/all/'+id,
+            method: 'get',
+            headers,
+            auth
+        }).then(res=>{
             this.setState({
                 resArticles:res.data,
+                updating:false
             })
         }).catch(err=>{
             this.setState({

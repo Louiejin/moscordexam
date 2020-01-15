@@ -10,6 +10,7 @@
   "author": "Louie Gen Acuña",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-basic-auth": "^1.2.0",
     "newsapi": "^2.4.0"

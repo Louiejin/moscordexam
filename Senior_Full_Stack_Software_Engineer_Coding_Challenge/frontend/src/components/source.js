@@ -33,7 +33,14 @@ export default class Source extends React.Component{
     }
 
     componentDidMount(){
-        axios.get('/source',axiosConfig,basicAuth).then(res=>{
+        let {headers,auth} = axiosConfig
+
+        axios({
+            url: '/source',
+            method: 'get',
+            headers,
+            auth
+        }).then(res=>{
             this.setState({dataSources:res.data.sources});
         }).catch(err=>{
             console.error(err);

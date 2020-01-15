@@ -1,9 +1,12 @@
 
 let axiosConfig ={
-    withCredentials: true,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
+    },
+    auth: {
+        username: 'news',
+        password: 'newsecrect'
     }
 }
 
